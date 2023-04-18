@@ -3,6 +3,7 @@
 namespace Jawak\DokuLaravel;
 
 use Jawak\DokuLaravel\Service\CreditCard;
+use Jawak\DokuLaravel\Service\CheckOut;
 use Jawak\DokuLaravel\Service\EMoney;
 use Jawak\DokuLaravel\Service\Gerai;
 use Jawak\DokuLaravel\Service\VirtualAccount;
@@ -16,6 +17,11 @@ class Doku
             'client_id' => config('doku-laravel.client_id'),
             'shared_key' => config('doku-laravel.shared_key'),
         ];
+    }
+
+    public function CheckOut(): CheckOut
+    {
+        return new CheckOut();
     }
 
     public function VA(): VirtualAccount
