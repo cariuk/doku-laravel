@@ -41,7 +41,7 @@ class PaycodeGenerator
 
         ];
 
-        $resp = Http::withHeaders($headers)->post($url, $data);
+        $resp = Http::timeout(120)->connectTimeout(120)->withHeaders($headers)->post($url, $data);
         return $resp->collect();
     }
 }
